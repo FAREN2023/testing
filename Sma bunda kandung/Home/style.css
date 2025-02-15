@@ -1,0 +1,47 @@
+
+body {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(14, 13, 13);
+
+}
+
+
+.Faren {
+    color: yellow;
+    position: relative;
+    left: -19px;
+    top: 30px;
+    margin: 280px 100px;
+    font-weight: bold;
+    font-size: 50px !important; /* Mengatur ukuran font */
+    font-family:"Press Start 2P", serif; /* Menentukan jenis font */
+    text-shadow:  0 5px 15px rgba(238, 255, 0, 0.4);
+}
+
+.moving-text {
+    position: relative;
+    top: -500px;
+    left: 60px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background:none;
+    text-align: center;
+    padding: 10px;
+    font-family:"Press Start 2P", serif ;  
+    white-space: nowrap; /* Pastikan teks tidak pindah ke baris berikutnya */
+}
+
+
+.im {
+ color: white;
+ position: relative;
+ top: -390px;
+ left: 80px;
+ font-family:"Press Start 2P", serif ; 
+ font-size: 50px; 
+
+}

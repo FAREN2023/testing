@@ -1,0 +1,563 @@
+/* Mengatur latar belakang dengan animasi */
+body {
+  background: linear-gradient(45deg, #1e1e1d, #25373d); /* Gradasi warna hitam dan abu-abu gelap */
+  background-size: 400% 400%; /* Memperbesar ukuran gradasi untuk efek animasi */
+  animation: gradient-bg 10s ease infinite; /* Animasi latar bergerak */
+  color: #ffffff; /* Warna teks utama menjadi putih agar kontras dengan latar */
+  font-family: 'Arial', sans-serif; /* Jenis font untuk teks utama */
+  margin: 0; /* Menghilangkan margin bawaan browser */
+  padding: 0; /* Menghilangkan padding bawaan browser */
+}
+
+/* Animasi gradasi */
+@keyframes gradient-bg {
+  0% { background-position: 0% 50%; } /* Posisi awal latar di sisi kiri */
+  50% { background-position: 100% 50%; } /* Latar bergerak ke sisi kanan */
+  100% { background-position: 0% 50%; } /* Kembali ke posisi awal */
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #57596374, #000000); /* Gradasi warna biru ke ungu */
+  color: white; /* Teks putih untuk kontras dengan latar header */
+  padding: 50px 20px; /* Memberi ruang lebih di dalam header */
+  text-align: center; /* Memposisikan teks di tengah */
+  font-size: 2.5em; /* Ukuran teks besar untuk judul */
+  border-radius: 100px 100px 100px 100px; /* Membuat sudut bawah membulat */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Bayangan untuk efek 3D */
+  position: relative; /* Membuat posisi relatif untuk elemen tambahan */
+  overflow: hidden; /* Menghindari elemen keluar dari header */
+}
+
+/* Teks deskripsi header */
+header p {
+  font-size: 1.3em; /* Ukuran teks deskripsi sedikit lebih kecil dari judul */
+  margin-top: 15px; /* Jarak antara judul dan deskripsi */
+  font-style: italic; /* Membuat teks miring */
+  color: rgba(255, 255, 255, 0.9); /* Warna teks deskripsi lebih lembut */
+  animation: fadeIn 1.5s ease-in-out; /* Animasi muncul perlahan */
+}
+
+/* Efek animasi untuk judul */
+header h1 {
+  animation: slideIn 2s ease-out; /* Animasi geser ke atas dengan smooth */
+  font-weight: 700; /* Membuat judul lebih tebal */
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Tambahkan bayangan teks untuk efek dramatis */
+}
+
+/* Elemen dekorasi latar belakang */
+header::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 200%;
+  top: -50%;
+  left: -25%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
+  animation: pulse 6s infinite; /* Efek animasi bergerak */
+  transform: rotate(45deg);
+  z-index: 0; /* Pastikan elemen ini berada di belakang */
+}
+
+/* Pastikan teks berada di atas elemen dekorasi */
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animasi fade-in untuk teks */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animasi slide-in untuk judul */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi background pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+
+/* Gaya untuk menu */
+.content-menu {
+  position: fixed; /* Posisi tetap di layar */
+  top: 6%; /* Jarak awal dari atas layar */
+  right: 20px; /* Jarak awal dari kanan layar */
+  background: rgba(50, 50, 50, 0.9); /* Latar belakang gelap */
+  padding: 15px 20px; /* Ruang di dalam menu */
+  border-radius: 10px; /* Membulatkan sudut */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bayangan menu */
+  color: #fff; /* Warna teks putih */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
+  max-width: 200px; /* Lebar maksimal menu */
+  z-index: 1000; /* Agar berada di atas elemen lainnya */
+  cursor: grab; /* Menunjukkan bahwa elemen bisa digeser */
+  transition: box-shadow 0.3s ease; /* Animasi hover */
+}
+
+/* Hover efek */
+.content-menu:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Bayangan lebih besar */
+}
+
+/* Gaya heading */
+.content-menu h3 {
+  margin: 0 0 10px; /* Margin bawah untuk memberi jarak ke daftar */
+  text-align: center; /* Pusatkan teks */
+  font-size: 1.2em;
+  color: #ffcc00; /* Warna heading berbeda */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .content-menu {
+    max-width: 180px; /* Sesuaikan ukuran untuk layar kecil */
+    font-size: 0.9em;
+  }
+}
+
+
+
+/* Gaya garis horizontal */
+.styled-hr {
+  border: none; /* Menghilangkan garis default */
+  border-top: 3px dashed #ffffff; /* Garis putus-putus putih */
+  margin: 20px 0; /* Jarak atas dan bawah garis */
+}
+
+/* Gaya daftar materi */
+dl {
+  margin: 10px 0; /* Jarak luar daftar */
+}
+
+dt {
+  font-weight: bold; /* Teks tebal untuk judul daftar */
+  color: #ffffff; /* Warna teks putih */
+  font-size: 1.2em; /* Ukuran teks lebih besar */
+}
+
+dd a {
+  color: #bbbbbb; /* Warna teks abu-abu terang untuk link */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  transition: color 0.3s, text-shadow 0.3s; /* Efek transisi */
+}
+
+dd a:hover {
+  color: #ffffff; /* Warna berubah menjadi putih saat dihover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Efek cahaya putih pada teks */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card */
+.card {
+  background: linear-gradient(145deg, #3a3a3a, #4f4f4f); /* Gradasi gelap untuk latar kartu */
+  border-radius: 70px 70px 70px 70px; /* Membuat sudut bawah membulat */
+  padding: 20px; /* Ruang dalam kartu */
+  margin: 30px auto; /* Jarak luar kartu */
+  max-width: 800px; /* Lebar maksimal kartu */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.1); /* Bayangan dengan efek glow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease; /* Animasi halus untuk hover */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative; /* Untuk elemen tambahan di hover */
+  overflow: hidden; /* Menghindari elemen tambahan keluar dari kartu */
+}
+
+/* Efek saat dihover */
+.card:hover {
+  transform: scale(1.05); /* Kartu sedikit membesar */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.3); /* Bayangan lebih kuat */
+  background: linear-gradient(145deg, #1b1a1a, #383232); /* Mengubah gradasi saat hover */
+}
+
+/* Efek glowing tambahan */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1; /* Glow muncul saat hover */
+  transform: scale(1.2);
+}
+
+/* Teks dalam kartu */
+.card h2, .card p {
+  color: #fff; /* Teks menjadi putih */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan lembut untuk teks */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%; /* Lebar kartu menyesuaikan layar kecil */
+    margin: 20px auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Card */
+.card3 {
+  background: rgba(50, 50, 50, 0.95);
+  width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Membuat card menjadi kontainer fleksibel */
+  flex-direction: row; /* Menyusun item secara horizontal */
+  align-items: center; /* Menyusun item di tengah secara vertikal */
+  justify-content: space-between; /* Memberikan jarak antar bagian */
+  margin-left: 320px;
+
+}
+
+.card3 .left {
+  flex: 1; /* Mengatur bagian kiri untuk mengambil ruang yang tersedia */
+  padding-right: 30px; /* Menambah jarak antara bagian kiri dan kanan */
+}
+
+.Heradatus {
+  text-align: center;
+}
+
+.card3 .right {
+  flex: 1; /* Mengatur bagian kanan untuk mengambil ruang yang tersedia */
+  padding-left: 20px; /* Menambah jarak antara bagian kanan dan kiri */
+}
+
+/* Memberikan efek hover untuk keseluruhan kartu */
+.card3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgb(251, 246, 246);
+}
+
+/* Responsivitas untuk ukuran layar lebih kecil */
+@media (max-width: 768px) {
+  .card3 {
+    flex-direction: column; /* Mengubah susunan menjadi vertikal pada layar kecil */
+  }
+
+  .card3 .left,
+  .card .right {
+    flex: unset; /* Menghilangkan pembagian ruang di layar kecil */
+    padding: 10px 0; /* Menambah ruang di antara bagian kiri dan kanan */
+  }
+}
+
+.card3:hover {
+  transform: scale(1.05); /* Membesarkan konten sedikit */
+  box-shadow: 0 10px 30px rgba(250, 249, 249, 0.5); /* Bayangan lebih terang */
+  background: linear-gradient(45deg, #000000, #15ff00);/* (sudut kemiringan warna,warna 1,warna 2) */
+}
+.card3 img {
+ margin: 10px;
+}
+
+
+
+
+
+/* Card */
+.card4 {
+  background: rgba(50, 50, 50, 0.95);
+  width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Membuat card menjadi kontainer fleksibel */
+  flex-direction: row; /* Menyusun item secara horizontal */
+  align-items: center; /* Menyusun item di tengah secara vertikal */
+  justify-content: space-between; /* Memberikan jarak antar bagian */
+  margin-top: -320px;
+  position: relative; /* Wajib jika ingin menggeser dengan left atau right */
+  /* Atau */
+  left: 193px; /* Geser objek 50px ke kanan */
+;}
+
+/* Efek hover untuk menggeser ke kiri */
+.card4:hover {
+  transform: translateX(-50px); /* Geser 50px ke kiri */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9); /* Menambahkan bayangan */
+}
+
+.card4 .left {
+  flex: 1; /* Mengatur bagian kiri untuk mengambil ruang yang tersedia */
+  padding-right: 30px; /* Menambah jarak antara bagian kiri dan kanan */
+}
+
+.Heradatus {
+  text-align: center;
+}
+
+.card4 .right {
+  flex: 1; /* Mengatur bagian kanan untuk mengambil ruang yang tersedia */
+  padding-left: 20px; /* Menambah jarak antara bagian kanan dan kiri */
+}
+
+/* Memberikan efek hover untuk keseluruhan kartu */
+
+
+/* Responsivitas untuk ukuran layar lebih kecil */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Mengubah susunan menjadi vertikal pada layar kecil */
+  }
+
+  .card4 .left,
+  .card4 .right {
+    flex: unset; /* Menghilangkan pembagian ruang di layar kecil */
+    padding: 10px 0; /* Menambah ruang di antara bagian kiri dan kanan */
+  }
+}
+
+.card4:hover {
+  transform: scale(1.05); /* Membesarkan konten sedikit */
+  box-shadow: 0 10px 30px rgba(250, 249, 249, 0.5); /* Bayangan lebih terang */
+  background: linear-gradient(90deg, #f71111, #050000);/* (sudut kemiringan warna,warna 1,warna 2) */
+}
+.card4 img {
+ margin: 10px;
+}
+
+
+
+
+
+/* Card */
+.card4_1 {
+  background: rgba(50, 50, 50, 0.95);
+  width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Membuat card menjadi kontainer fleksibel */
+  flex-direction: row; /* Menyusun item secara horizontal */
+  align-items: center; /* Menyusun item di tengah secara vertikal */
+  justify-content: space-between; /* Memberikan jarak antar bagian */
+  margin-top: -320px;
+  position: relative; /* Wajib jika ingin menggeser dengan left atau right */
+  /* Atau */
+  right: 183px; /* Geser objek 50px ke kanan */
+;}
+
+/* Efek hover untuk menggeser ke kiri */
+.card4_1:hover {
+  transform: translateX(-50px); /* Geser 50px ke kiri */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9); /* Menambahkan bayangan */
+}
+
+.card4_1 .left {
+  flex: 1; /* Mengatur bagian kiri untuk mengambil ruang yang tersedia */
+  padding-right: 30px; /* Menambah jarak antara bagian kiri dan kanan */
+}
+
+.Heradatus {
+  text-align: center;
+}
+
+.card4_1 .right {
+  flex: 1; /* Mengatur bagian kanan untuk mengambil ruang yang tersedia */
+  padding-left: 20px; /* Menambah jarak antara bagian kanan dan kiri */
+}
+
+/* Memberikan efek hover untuk keseluruhan kartu */
+
+
+/* Responsivitas untuk ukuran layar lebih kecil */
+@media (max-width: 768px) {
+  .card_1 {
+    flex-direction: column; /* Mengubah susunan menjadi vertikal pada layar kecil */
+  }
+
+  .card4_1 .left,
+  .card4_1 .right {
+    flex: unset; /* Menghilangkan pembagian ruang di layar kecil */
+    padding: 10px 0; /* Menambah ruang di antara bagian kiri dan kanan */
+  }
+}
+
+.card4_1:hover {
+  transform: scale(1.05); /* Membesarkan konten sedikit */
+  box-shadow: 0 10px 30px rgba(250, 249, 249, 0.5); /* Bayangan lebih terang */
+  background: linear-gradient(60deg, #0008ff, #000000);/* (sudut kemiringan warna,warna 1,warna 2) */
+}
+.card4_1 img {
+ margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card */
+.card3_1 {
+  background: rgba(50, 50, 50, 0.95);
+  width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px #080808cc;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex; /* Membuat card menjadi kontainer fleksibel */
+  flex-direction: row; /* Menyusun item secara horizontal */
+  align-items: center; /* Menyusun item di tengah secara vertikal */
+  justify-content: space-between; /* Memberikan jarak antar bagian */
+  margin-left: 700px;
+
+}
+
+.card3_1 .left {
+  flex: 1; /* Mengatur bagian kiri untuk mengambil ruang yang tersedia */
+  padding-right: 30px; /* Menambah jarak antara bagian kiri dan kanan */
+}
+
+.Heradatus {
+  text-align: center;
+}
+
+.card3_1 .right {
+  flex: 1; /* Mengatur bagian kanan untuk mengambil ruang yang tersedia */
+  padding-left: 20px; /* Menambah jarak antara bagian kanan dan kiri */
+}
+
+
+
+/* Responsivitas untuk ukuran layar lebih kecil */
+@media (max-width: 768px) {
+  .card3_1 {
+    flex-direction: column; /* Mengubah susunan menjadi vertikal pada layar kecil */
+  }
+
+  .card3_1 .left,
+  .card3_1 .right {
+    flex: unset; /* Menghilangkan pembagian ruang di layar kecil */
+    padding: 10px 0; /* Menambah ruang di antara bagian kiri dan kanan */
+  }
+}
+
+.card3_1:hover {
+  transform: scale(1.05); /* Membesarkan konten sedikit */
+  box-shadow: 0 10px 30px  rgba(255, 255, 255, 0.5); /* Bayangan lebih terang */
+  background: linear-gradient(90deg, #0008ff, #f20000);/* (sudut kemiringan warna,warna 1,warna 2) */
+}
+.card3_1 img {
+ margin: 10px;
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: rgba(40, 40, 40, 0.9); /* Warna abu-abu gelap transparan */
+  color: white; /* Warna teks putih */
+  text-align: center; /* Teks di tengah */
+  padding: 20px 0; /* Ruang atas dan bawah */
+  margin-top: 20px; /* Jarak luar atas */
+  font-size: 0.9em; /* Ukuran teks kecil */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Bayangan lembut di atas footer */
+}
+.responsive-img {
+  max-width: 100%; /* Membatasi gambar agar tidak lebih lebar dari kontainer */
+  height: auto; /* Menjaga rasio gambar tetap proporsional */
+  width: 380px; /* Ukuran gambar tetap 600px jika dimungkinkan */
+  border-radius: 10px; /* Contoh: Membuat sudut gambar melengkung */
+  margin: 10px;
+}
+
+.list {
+  background: rgba(50, 50, 50, 0.95);
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 25px #080808cc;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  margin-left: 50px;
+  margin-top: -100px;
+}
